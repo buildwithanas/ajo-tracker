@@ -9,6 +9,7 @@ export function AuthProvider({ children }) {
     return raw ? JSON.parse(raw) : null;
   });
 
+  
   const login = useCallback(async (email, password) => {
     const data = await api.login({ email, password });
     localStorage.setItem('ajo_token', data.token);
